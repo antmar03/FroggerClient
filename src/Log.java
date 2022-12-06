@@ -9,7 +9,7 @@ public class Log extends Sprite{
 	public Log(Cat cat, JLabel lCat, Cat cat2, JLabel lCat2) {
 		super(0,0, Properties.logHeight, Properties.logWidth, Properties.logImg);	
 		this.cat = cat;
-		this.cat = cat2;
+		this.cat2 = cat2;
 		this.lCat = lCat;
 		this.lCat2 = lCat2;
 		this.onLog = false;
@@ -23,21 +23,18 @@ public class Log extends Sprite{
 	}
 	
 	private void checkCollision(int speedMultiplier, int direction) {
+		
 		if(this.getRectangle().intersects(cat.getRectangle())) {
 			cat.setX(cat.getX() + ((Properties.CAR_STEP * speedMultiplier)/2) * direction);
 			System.out.println(cat.getX() + " " + cat.getY());
 			lCat.setLocation(cat.getX(), cat.getY());
 			onLog = true;
-		}else {
-			onLog = false;
-		}
-		
-		if(this.getRectangle().intersects(cat2.getRectangle())) {
+		}else if(this.getRectangle().intersects(cat2.getRectangle())) {
 			cat2.setX(cat2.getX() + ((Properties.CAR_STEP * speedMultiplier)/2) * direction);
 			System.out.println(cat2.getX() + " " + cat2.getY());
 			lCat2.setLocation(cat2.getX(), cat2.getY());
 			onLog = true;
-		}else {
+		} else {
 			onLog = false;
 		}
 		

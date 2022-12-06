@@ -9,7 +9,7 @@ public class Row {
 	private int y,xSpacing, speedMultiplier;
 	private RowType type;
 	private Cat cat,cat2;
-	private JLabel lCat;
+	private JLabel lCat,lCat2;
 	private boolean running;
 	
 	//-1 back 1 forward
@@ -19,6 +19,8 @@ public class Row {
 		running = false;
 		this.cat = cat;
 		this.lCat = lCat;
+		this.cat2 = cat2;
+		this.lCat2 = lCat2;
 		switch(type) {
 		case CAR:
 			sprites = new Car[num];

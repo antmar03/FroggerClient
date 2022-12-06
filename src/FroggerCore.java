@@ -334,7 +334,7 @@ public class FroggerCore extends JFrame implements KeyListener, ActionListener{
 	}
 	
 	public void endGame(boolean won) {
-		isOver = true;
+		/*isOver = true;
 		rowHandler.stopMovingCars();
 		logRowHandler.stopMovingCars();
 		
@@ -346,7 +346,7 @@ public class FroggerCore extends JFrame implements KeyListener, ActionListener{
 		}
 		
 		score.setText(Integer.toString(cat.getScore()));
-		startButton.setText("Restart");
+		startButton.setText("Restart");*/
 	}
 	
 	public RowHandler getRowHandler(int index) {
@@ -360,14 +360,6 @@ public class FroggerCore extends JFrame implements KeyListener, ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == startButton) {
-			if(isOver) {
-				cat.setX((Properties.SCREEN_WIDTH / 2) - Properties.catWidth);
-				cat.setY((Properties.SCREEN_HEIGHT - Properties.catHeight) - 70);
-				cat.getCatLabel().setIcon(new ImageIcon(getClass().getResource(Properties.catImg)));
-				updateGraphics();
-				startButton.setText("Stop");
-				isOver = false;
-			}else {
 				if(!moving) {
 					startButton.setText("Stop");
 					String command = "START";
@@ -383,8 +375,6 @@ public class FroggerCore extends JFrame implements KeyListener, ActionListener{
 					out.flush();
 					moving = false;
 				}
-			}
-
 		}
 		
 	}

@@ -42,12 +42,7 @@ public class RowHandler implements Runnable{
 	}
 	
 	
-	public void startMovingCars() {
-		if(!this.carsMoving) {
-			thread = new Thread(this, "Cars Thread");
-			thread.start();
-		}
-	}
+	
 	
 	public void stepOnce() {
 		for(Row row : rowArray) {
