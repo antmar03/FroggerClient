@@ -320,6 +320,11 @@ public class FroggerCore extends JFrame implements KeyListener, ActionListener{
 		
 		//updateGraphics();
 	}
+
+	
+	public void setScoreLabel(int iScore) {
+		score.setText(Integer.toString(iScore));
+	}
 	
 	private void updateGraphics() {
 		//Cat.setLocation(cat.getX(), cat.getY());

@@ -57,6 +57,11 @@ public class ClientService implements Runnable {
 			main.getRowHandler(2).stepOnce();
 		}
 		
+		if(command.equals("UPDATE")) {
+			int score = in.nextInt();
+			main.setScoreLabel(score);
+		}
+		
 		
 		if ( command.equals("PLAYER")) {
 			int playerNo = in.nextInt();
