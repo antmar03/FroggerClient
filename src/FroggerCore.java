@@ -266,6 +266,12 @@ public class FroggerCore extends JFrame implements KeyListener, ActionListener{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public void sendCommandToServer(String command) {
+		System.out.println("Sending: " + command);
+		out.println(command);
+		out.flush();
+	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -280,35 +286,27 @@ public class FroggerCore extends JFrame implements KeyListener, ActionListener{
 		//set up a communication socket
 
 		//Initialize data stream to send data out
-		String command;
+		String command = "";
 
 		switch(e.getKeyCode()) {
 			case KeyEvent.VK_UP:
 				command = "PLAYER " + catNumber + " UP";
-				System.out.println("Sending: " + command);
-				out.println(command);
-				out.flush();
+				this.sendCommandToServer(command);
 			break;
 			
 			case KeyEvent.VK_DOWN:
 				command = "PLAYER " + catNumber + " DOWN";
-				System.out.println("Sending: " + command);
-				out.println(command);
-				out.flush();
+				this.sendCommandToServer(command);
 			break;
 			
 			case KeyEvent.VK_LEFT:
 				command = "PLAYER " + catNumber + " LEFT";
-				System.out.println("Sending: " + command);
-				out.println(command);
-				out.flush();
+				this.sendCommandToServer(command);
 			break;
 			
 			case KeyEvent.VK_RIGHT:
 				command = "PLAYER " + catNumber + " RIGHT";
-				System.out.println("Sending: " + command);
-				out.println(command);
-				out.flush();
+				this.sendCommandToServer(command);
 			break;
 			
 			default:

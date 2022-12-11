@@ -56,11 +56,9 @@ public class Car extends Sprite{
 	
 	private void detectCollision() {
 		if(this.getRectangle().intersects(this.getCat().getRectangle())) {
-			FroggerCore.getInstance().endGame(false);
-		}
-		
-		if(this.getRectangle().intersects(this.getCat2().getRectangle())) {
-			FroggerCore.getInstance().endGame(false);
+			FroggerCore.getInstance().sendCommandToServer("END LOSE");
+		}else if(this.getRectangle().intersects(this.getCat2().getRectangle())) {
+			FroggerCore.getInstance().sendCommandToServer("END LOSE");
 		}
 		
 	}
