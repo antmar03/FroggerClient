@@ -30,7 +30,6 @@ public class FroggerCore extends JFrame implements KeyListener, ActionListener{
 	private JLabel lCat,lCat2,lBackground,score;
 	private Container content;
 	private ImageIcon iCat, iCar;
-	private ConnectToDatabase db;
 	private int catNumber;
 	private static String playerName;
 	private boolean isOver,moving;
@@ -53,7 +52,6 @@ public class FroggerCore extends JFrame implements KeyListener, ActionListener{
 		    public void windowClosing(WindowEvent e)
 		    {
 		        super.windowClosing(e);
-		        db.closeConnection();
 		        System.out.println("Closing db");
 		    }
 		});
@@ -160,9 +158,6 @@ public class FroggerCore extends JFrame implements KeyListener, ActionListener{
 		//Initialize the Graphics Settings
 		initializeGraphics();
 		
-		db = ConnectToDatabase.getInstance(cat, this.playerName);
-		//db.setPlayerValues(this.playerName);
-		cat.setScore(db.getPlayerScore(playerName));
 		score.setText(Integer.toString(cat.getScore()));
 		//Initialize Window Settings
 		initializeWindow();
